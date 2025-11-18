@@ -9,7 +9,7 @@ class City_admin(admin.ModelAdmin):
 @admin.register(Flight)
 
 class Flight_admin(admin.ModelAdmin):
-    list_display = ("id", "airline", "origin", "destination", "depature_time", "arrival_time", "price", "transfers")
+    list_display = ("id", "airline", "origin", "destination", "departure_time", "arrival_time", "price", "transfers")
 
 @admin.register(Airline)
 

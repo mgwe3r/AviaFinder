@@ -17,8 +17,8 @@ class Airline(models.Model):
     
 class Flight(models.Model):
     airline = models.ForeignKey(Airline, on_delete= models.CASCADE ,blank=True, null=True)
-    origin = models.ForeignKey(City, on_delete= models.CASCADE ,blank=True, null=True)
-    destination = models.ForeignKey(City, on_delete= models.CASCADE ,blank=True, null=True)
+    origin = models.ForeignKey(City, on_delete= models.CASCADE, related_name="start_city")
+    destination = models.ForeignKey(City, on_delete= models.CASCADE, related_name="end_city")
     departure_time = models.DateTimeField()
     arrival_time = models.DateTimeField()
     price = models.DecimalField(max_digits=10, decimal_places=2, default=0)
