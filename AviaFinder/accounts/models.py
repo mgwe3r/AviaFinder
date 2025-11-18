@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-from .models import Flight
+from flights.models import Flight
 
 
 class UserFavorite(models.Model):
