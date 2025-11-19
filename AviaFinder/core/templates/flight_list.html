@@ -6,13 +6,14 @@
     <title>Document</title>
 </head>
 <body>
+    {% include "header.html" %}
     {% if flight %}
     {% for i in flight %}
-    <p>{{i.airline}}</p>
-    <p>{{i.origin}}-{{i.destination}}</p>
-    <p>{{i.departure_time}}-{{i.arrival_time}}</p>
-    <p>{{i.price}}</p>
-    <p>{{i.transfers}}</p>
+    <p>Авиакомпания: {{i.airline}} <img src="{{i.image.url}}"></p>
+    <p>Город вылета/прилета: {{i.origin}} - {{i.destination}}</p>
+    <p>Время вылета/прилета: {{i.departure_time}} - {{i.arrival_time}}</p>
+    <p>Цена билета: {{i.price}}</p>
+    <p>Количество пересадок: {{i.transfers}}</p>
     {% endfor %}
     {% else %}
     <p>Рейсов сейчас нет</p>
