@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="{% static "css/task_list_style.css" %}">
+        <link rel="stylesheet" href="{% static "css/flight_list_style.css" %}">
     <title>Document</title>
 </head>
 <body>
@@ -14,7 +14,12 @@
             <div class="flight_card">
                 {% if flight %}
                 {% for i in flight %}
-                <p>Авиакомпания: {{i.airline}}</p> <img src="{{i.logo.url}}">
+                <p>Авиакомпания: {{i.airline}}</p> 
+                {% if i.airline.logo %}
+                <img src="{{i.airline.logo.url}}" class="logo_img_card" width="100px" height="30px">
+                {% else %}
+                <p>Логотип компании отсутствует</p>
+                {% endif %}
                 <p>Город вылета/прилета: {{i.origin}} - {{i.destination}}</p>
                 <p>Время вылета/прилета: {{i.departure_time}} - {{i.arrival_time}}</p>
                 <p>Цена билета: {{i.price}}</p>

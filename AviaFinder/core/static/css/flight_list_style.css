@@ -1,9 +1,14 @@
 .main_container{
     height: 300px;
-    width: 100px;
+    width: 1000px;
     border: 1px solid black;
 }
 
 .flight_card{
     padding: 10px;
+}
+
+.logo_img_card{
+    width: 50px;
+    height: 30px;
 }
