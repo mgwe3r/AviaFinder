@@ -1,22 +1,30 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static "css/task_list_style.css" %}">
     <title>Document</title>
 </head>
 <body>
     {% include "header.html" %}
-    {% if flight %}
-    {% for i in flight %}
-    <p>Авиакомпания: {{i.airline}} <img src="{{i.image.url}}"></p>
-    <p>Город вылета/прилета: {{i.origin}} - {{i.destination}}</p>
-    <p>Время вылета/прилета: {{i.departure_time}} - {{i.arrival_time}}</p>
-    <p>Цена билета: {{i.price}}</p>
-    <p>Количество пересадок: {{i.transfers}}</p>
-    {% endfor %}
-    {% else %}
-    <p>Рейсов сейчас нет</p>
-    {% endif %}
+    <div class="main_container">
+        <div class="flight_grid">
+            <div class="flight_card">
+                {% if flight %}
+                {% for i in flight %}
+                <p>Авиакомпания: {{i.airline}}</p> <img src="{{i.logo.url}}">
+                <p>Город вылета/прилета: {{i.origin}} - {{i.destination}}</p>
+                <p>Время вылета/прилета: {{i.departure_time}} - {{i.arrival_time}}</p>
+                <p>Цена билета: {{i.price}}</p>
+                <p>Количество пересадок: {{i.transfers}}</p>
+                {% endfor %}
+                {% else %}
+                <p>Рейсов сейчас нет</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
 </body>
 </html>

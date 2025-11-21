@@ -1,0 +1,9 @@
+.main_container{
+    height: 300px;
+    width: 100px;
+    border: 1px solid black;
+}
+
+.flight_card{
+    padding: 10px;
+}
