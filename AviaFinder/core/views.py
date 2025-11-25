@@ -19,4 +19,4 @@ def flight_search(request):
         flights = Flight.objects.filter(origin=origin, destination=destination)
         if date:
             flights = flights.filter(departure_time__date=date)
-    return render(request, "flight_list.html", {"form":form, "flights":flights})
+    return render(request, "flight_list.html", {"form": form, "flights": flights})

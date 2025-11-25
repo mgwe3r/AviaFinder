@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
 
 *{
     margin: 0;
@@ -11,13 +12,84 @@
 
 .header_container{
     width: 100%;
-    height: 150px;
+    height: 250px;
     border: 1px solid #00BFFF;
     background-color: #00BFFF;
+}
+
+h1{
+    color: #fff;
+}
+
+.h1-text{
+    text-align: center;
+    margin-top: 50px;
+    font-size: 40px;
+}
+
+.search-form{
+    margin-top: 30px;
+    text-align: center;
+    align-items: center;
+}
+
+ul{
+    display: inline;
 }
 
 .personal-account-link{
     text-decoration: none;
     color: whitesmoke;
     font-size: 20px;
+    margin-left: 73%;
+}
+
+.personal-account-img{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    margin-left: 71%;
+}
+
+.support-link{
+    text-decoration: none;
+    color: whitesmoke;
+    font-size: 20px;
+}
+
+.support-img{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    margin-left: 83%;
+}
+
+.btn{
+    min-width: 10px;
+    min-height: 10px;
+    color: #F5F6F9;
+    background-color: #F26545;
+    border: 1px solid #F26545;
+    border-radius: 6px;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.btn:hover{
+    transition: 0.5s;
+    background-color: #933a26;
+    border: 1px solid #933a26;
+}
+
+.search_btn{
+    min-width: 100px;
+    min-height: 20px;
+    font-size: 20px;
+}
+
+.oswald{
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
 }

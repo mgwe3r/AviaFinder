@@ -10,10 +10,20 @@
 <body>
     <div class="header_container">
         <div class="personal-account-link-container">
-            <a href="#" class="personal-account-link">Личный кабинет</a>
-            <form method="get">
+            <nav>
+                <ul>
+                    <li>
+                        <img src="{% static "images/icons8-человек-64.png" %}" class="personal-account-img"> <a href="#" class="personal-account-link">Профиль</a>
+                    </li>
+                    <li>
+                         <img src="{% static "images/icons8-поддержка-64.png" %}" class="support-img"><a href="#" class="support-link">Поддержка</a>
+                    </li>
+                </ul>
+            </nav>
+            <h1 class="h1-text oswald">Тут покупают авиабилеты</h1>
+            <form method="get" class="search-form">
                 {{ form.as_p }}
-                <button type="submit">Найти</button>
+                <button type="submit" class="btn search_btn">Найти</button>
             </form>
         </div>
     </div>
