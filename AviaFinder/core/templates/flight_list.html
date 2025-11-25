@@ -12,8 +12,8 @@
     <div class="main_container">
         <div class="flight_grid">
             <div class="flight_card">
-                {% if flight %}
-                {% for i in flight %}
+                {% if flights %}
+                {% for i in flights %}
                 <p>Авиакомпания: {{i.airline}}</p> 
                 {% if i.airline.logo %}
                 <img src="{{i.airline.logo.url}}" class="logo_img_card" width="100px" height="30px">

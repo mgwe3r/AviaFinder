@@ -2,7 +2,7 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from flights.models import City
 
-class Flights_search_form(forms.ModelForm):
+class Flights_search_form(forms.Form):
     origin = forms.ModelChoiceField(
         queryset = City.objects.all(),
         label="Город вылета ",
