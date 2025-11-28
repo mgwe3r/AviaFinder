@@ -12,6 +12,7 @@
     <div class="main_container">
         <div class="flight_grid">
             <div class="flight_card">
+                <a href="#">
                 {% if flights %}
                 {% for i in flights %}
                 <p>Авиакомпания: {{i.airline}}</p> 
@@ -27,7 +28,8 @@
                 {% endfor %}
                 {% else %}
                 <p>Рейсов сейчас нет</p>
-                {% endif %}
+                {% endif %}'
+                <a>
             </div>
         </div>
     </div>
