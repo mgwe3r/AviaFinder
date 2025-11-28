@@ -30,7 +30,6 @@ h1{
 .search-form{
     margin-top: 30px;
     margin-left: 25%;
-    padding: 0px 10px;
     text-align: center;
     align-items: center;
     display: inline-flex;
@@ -42,32 +41,46 @@ h1{
     justify-content: flex-end;
 } */
 
+.link-container{
+    min-width: 100px;
+    min-height: 100px;
+}
+
+.account-link-container{
+      margin-left: 80%;
+}
+
+.support-link-container{
+    margin-left: 90%;
+    position: absolute;
+}
+
+.support-img{
+    padding-right: 20px;
+}
+
 .personal-account-link{
     text-decoration: none;
     color: whitesmoke;
     font-size: 20px;
-    margin-left: 73%;
 }
 
 .personal-account-img{
     width: 20px;
     height: 20px;
     position: absolute;
-    margin-left: 71%;
 }
 
 .support-link{
     text-decoration: none;
     color: whitesmoke;
     font-size: 20px;
-    margin-left: 80%;
 }
 
 .support-img{
     width: 20px;
     height: 20px;
     position: absolute;
-    margin-left: 83%;
 }
 
 .btn{

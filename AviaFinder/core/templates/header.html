@@ -10,16 +10,16 @@
 <body>
     <div class="header_container">
         <div class="personal-account-link-container">
-            <nav>
-                <ul>
-                    <li>
-                        <img src="{% static "images/icons8-человек-64.png" %}" class="personal-account-img"> <a href="#" class="personal-account-link">Профиль</a>
-                    </li>
-                    <li>
-                        <img src="{% static "images/icons8-поддержка-64.png" %}" class="support-img"><a href="#" class="support-link">Поддержка</a>
-                    </li>
-                </ul>
-            </nav>
+            <div class="link_container">
+                <div class="account-link-container">
+                    <img src="{% static "images/icons8-человек-64.png" %}" class="personal-account-img"> 
+                    <a href="#" class="personal-account-link">Профиль</a>
+                </div>
+                <div class="support-link-container">
+                    <img src="{% static "images/icons8-поддержка-64.png" %}" class="support-img">
+                    <a href="#" class="support-link">Поддержка</a>
+                </div>
+            </div>
             <h1 class="h1-text oswald">Тут покупают авиабилеты</h1>
             <form method="get" class="search-form">
                 {{ form.as_p }}

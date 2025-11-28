@@ -5,16 +5,14 @@ from flights.models import City
 class Flights_search_form(forms.Form):
     origin = forms.ModelChoiceField(
         queryset = City.objects.all(),
-        label="Город вылета ",
+        label=None,
         required=True,
     )
     destination = forms.ModelChoiceField(
         queryset = City.objects.all(),
-        label="Город прилета ",
         required=True
     )
     date = forms.DateField(
-        label="Дата вылета ",
         widget=forms.DateInput(attrs={"type": "date"}),
-        required=False
+        required=False,
     )
