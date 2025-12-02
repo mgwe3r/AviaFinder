@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>{{flight.airline}}</h1>
+    <img src="{{flight.airline.logo.url}}" width="100px" height="100px">
+    <h2>{{flight.origin}}</h2>
+    <h2>{{flight.destination}}</h2>
+    <h2>{{flight.departure_time}}</h2>
+    <h2>{{flight.arrival_time}}</h2>
+    <h2>{{flight.price}}</h2>
+    <h2>{{flight.transfers}}</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Подтвердить</button>
+    </form>
+</body>
+</html>

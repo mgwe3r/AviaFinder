@@ -2,7 +2,15 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
 from flights.models import Flight
-from .forms import Flights_search_form
+from .forms import Flights_search_form, BuyFlightForm
+
+def profile_view(request): 
+    return render(request, "profile.html")
+
+def flight(request, flight_id):
+    flight = get_object_or_404(Flight, id=flight_id)
+    return render(request, "flight_card.html", {"flight": flight})
+
 
 
 def flight_search(request):
@@ -30,3 +38,10 @@ def flight_view(request):
         if date:
             flights = flights.filter(departure_time__date=date)
     return render(request, "flight_list.html", {"flights": flights, "form": form})
+
+def buy_flight(request):
+    form = BuyFlightForm(request.POST)
+    if form.is_valid():
+        form.save()
+        redirect("flight_view")
+    return render(request, "flight_card.html", {"form":form})

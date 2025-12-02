@@ -5,6 +5,8 @@ from django.contrib.auth import authenticate, login, logout
 from .forms import CustomUserCreationForm
 
 
+# сделать вьюху для профиля по типу вьюхи для home в cofe store
+
 def user_login(request):
     if request.method == 'POST':
         username = request.POST['username']

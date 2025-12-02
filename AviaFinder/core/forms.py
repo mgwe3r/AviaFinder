@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
-from flights.models import City
+from flights.models import City, Buyflight
 
 class Flights_search_form(forms.Form):
     origin = forms.ModelChoiceField(
@@ -16,3 +16,7 @@ class Flights_search_form(forms.Form):
         widget=forms.DateInput(attrs={"type": "date"}),
         required=False,
     )
+
+class BuyFlightForm(forms.ModelForm):
+    model = Buyflight
+    fields = ("first_name", "last_name", "passport")
