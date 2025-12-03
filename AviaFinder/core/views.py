@@ -9,7 +9,17 @@ def profile_view(request):
 
 def flight(request, flight_id):
     flight = get_object_or_404(Flight, id=flight_id)
-    return render(request, "flight_card.html", {"flight": flight})
+
+    if request.method == "POST":
+        form = BuyFlightForm(request.POST)
+        if form.is_valid():
+            order = form.save()
+            order.flight = flight
+            order.save()
+            redirect("flight_view")
+    else:
+        form = BuyFlightForm()
+    return render(request, "flight_card.html", {"form":form, "flight":flight})
 
 
 
@@ -39,9 +49,16 @@ def flight_view(request):
             flights = flights.filter(departure_time__date=date)
     return render(request, "flight_list.html", {"flights": flights, "form": form})
 
-def buy_flight(request):
-    form = BuyFlightForm(request.POST)
-    if form.is_valid():
-        form.save()
-        redirect("flight_view")
-    return render(request, "flight_card.html", {"form":form})
+# def buy_flight(request, flight_id):
+    # flight = get_object_or_404(Flight, id=flight_id)
+
+    # if request.method == "POST":
+    #     form = BuyFlightForm(request.POST)
+    #     if form.is_valid():
+    #         order = form.save()
+    #         order.flight = flight
+    #         order.save()
+    #         redirect("flight_view")
+    # else:
+    #     form = BuyFlightForm()
+    # return render(request, "flight_card.html", {"form":form, "flight":flight})

@@ -6,5 +6,5 @@ from core.views import profile_view
 urlpatterns = [
     path("", views.flight_view, name="flight_view"),
     path("flight/<int:flight_id>", views.flight, name="flight"),
-    path("profile/", profile_view, name="profle_view")
+    # path("order/<int:flight_id>", views.buy_flight, name="buy_flight")
 ]
