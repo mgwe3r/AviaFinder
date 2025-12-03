@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Flight, City, Airline
+from .models import Flight, City, Airline, Buyflight
 
 @admin.register(City)
 
@@ -15,3 +15,8 @@ class Flight_admin(admin.ModelAdmin):
 
 class Airplane_admin(admin.ModelAdmin):
     list_display = ("id", "name", "logo")
+
+@admin.register(Buyflight)
+
+class BuyFlight_admin(admin.ModelAdmin):
+    list_display = ("first_name", "last_name", "passport")
