@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+input{
+    border-radius: 9px;
+    border: 1px solid black;
+}
+
+.btn{
+    background-color: #00a2ff ;
+    border: 1px solid #00a2ff;
+    border-radius: 7px;
+    color: #cfedff;
+    transition: 0.5s;
+}
+
+.btn:hover{
+    transition: 0.5s;
+    background-color: grey;
+    border: 1px solid grey;
+    box-shadow: -2px 0px 8px 3px grey;
+}
+
+.card_container{
+    text-align: center;
+    align-items: center;
+}
+
+h2{
+    font-size: 15px;
+}
+
+.roboto-mono{
+  font-family: "Roboto Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}

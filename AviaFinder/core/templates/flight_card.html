@@ -1,23 +1,27 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static "css/flight_card_style.css" %}">
     <title>Document</title>
 </head>
 <body>
-    <h1>{{flight.airline}}</h1>
-    <img src="{{flight.airline.logo.url}}" width="100px" height="100px">
-    <h2>{{flight.origin}}</h2>
-    <h2>{{flight.destination}}</h2>
-    <h2>{{flight.departure_time}}</h2>
-    <h2>{{flight.arrival_time}}</h2>
-    <h2>{{flight.price}}</h2>
-    <h2>{{flight.transfers}}</h2>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Подтвердить</button>
-    </form>
+    <div class="card_container">
+        <h1 class="roboto-mono">Авиакомпания: {{flight.airline}}</h1>
+        <img src="{{flight.airline.logo.url}}" width="100px" height="100px">
+        <h2 class="roboto-mono">Город вылета: {{flight.origin}}</h2>
+        <h2 class="roboto-mono">Город прилета: {{flight.destination}}</h2>
+        <h2 class="roboto-mono">Время вылета: {{flight.departure_time}}</h2>
+        <h2 class="roboto-mono">Время прилета: {{flight.arrival_time}}</h2>
+        <h2 class="roboto-mono">Цена билета: {{flight.price}}</h2>
+        <h2 class="roboto-mono">Количество пересадок: {{flight.transfers}}</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="roboto-mono btn">Подтвердить</button>
+        </form>
+    </div>
 </body>
 </html>

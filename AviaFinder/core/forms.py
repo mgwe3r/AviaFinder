@@ -20,4 +20,4 @@ class Flights_search_form(forms.Form):
 class BuyFlightForm(forms.ModelForm):
     class Meta:
         model = Buyflight
-        fields = ("first_name", "last_name", "passport")
+        fields = ("first_name", "last_name", "email", "passport")
