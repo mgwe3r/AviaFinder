@@ -83,7 +83,7 @@ h1{
     position: absolute;
 }
 
-.btn{
+.header-btn{
     min-width: 10px;
     min-height: 10px;
     color: #F5F6F9;
@@ -94,7 +94,7 @@ h1{
     cursor: pointer;
 }
 
-.btn:hover{
+.header-btn:hover{
     transition: 0.5s;
     background-color: #933a26;
     border: 1px solid #933a26;

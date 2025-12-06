@@ -5,9 +5,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static "css/flight_card_style.css" %}">
+    <link rel="stylesheet" href="{% static "css/header_style.css" %}">
     <title>Document</title>
 </head>
 <body>
+    <div class="header_container">
+        <div class="personal-account-link-container">
+            <div class="link_container">
+                <div class="account-link-container">
+                    <img src="{% static "images/icons8-человек-64.png" %}" class="personal-account-img"> 
+                    <a href="{% url "profile_view" %}" class="personal-account-link">Профиль</a>
+                </div>
+                <div class="support-link-container">
+                    <img src="{% static "images/icons8-поддержка-64.png" %}" class="support-img">
+                    <a href="#" class="support-link">Поддержка</a>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="card_container">
         <h1 class="roboto-mono">Авиакомпания: {{flight.airline}}</h1>
         <img src="{{flight.airline.logo.url}}" width="100px" height="100px">
@@ -19,9 +34,20 @@
         <h2 class="roboto-mono">Количество пересадок: {{flight.transfers}}</h2>
         <form method="post">
             {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit" class="roboto-mono btn">Подтвердить</button>
+            {% comment %} {{ form.as_p }} {% endcomment %}
+            {% for field in form %}
+            <div class="mb-4">
+                {{ field }}
+                {{ field.errors }}
+            </div>
+            {% endfor %}
+            <button type="submit" class="roboto-mono btn" id="btn-send" onclick="alert("Форма отправлена")">Подтвердить</button>
         </form>
     </div>
-</body>
+
+
+    <script>
+        const btn = document.getElementById("btn-send"); btn.onclick = function() {alert("Форма отправлена");};
+    </script>
+</body> 
 </html>

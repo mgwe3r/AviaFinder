@@ -19,4 +19,4 @@ class Airplane_admin(admin.ModelAdmin):
 @admin.register(Buyflight)
 
 class BuyFlight_admin(admin.ModelAdmin):
-    list_display = ("first_name", "last_name", "passport")
+    list_display = ("first_name", "last_name", "passport", "email")

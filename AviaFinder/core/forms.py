@@ -21,3 +21,9 @@ class BuyFlightForm(forms.ModelForm):
     class Meta:
         model = Buyflight
         fields = ("first_name", "last_name", "email", "passport")
+        widgets = {
+            "first_name":forms.TextInput(attrs={"placeholder":"Имя"}),
+            "last_name":forms.TextInput(attrs={"placeholder":"Фамилия"}),
+            "email":forms.EmailInput(attrs={"placeholder":"Email"}),
+            "passport":forms.TextInput(attrs={"placeholder":"Номер паспорта"}),
+        }
