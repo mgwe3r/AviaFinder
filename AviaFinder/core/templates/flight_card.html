@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static "css/flight_card_style.css" %}">
     <link rel="stylesheet" href="{% static "css/header_style.css" %}">
+    <link rel="stylesheet" href="{% static "css/flight_card_style.css" %}">
     <title>Document</title>
 </head>
 <body>
@@ -24,15 +24,22 @@
         </div>
     </div>
     <div class="card_container">
-        <h1 class="roboto-mono">Авиакомпания: {{flight.airline}}</h1>
-        <img src="{{flight.airline.logo.url}}" width="100px" height="100px">
-        <h2 class="roboto-mono">Город вылета: {{flight.origin}}</h2>
-        <h2 class="roboto-mono">Город прилета: {{flight.destination}}</h2>
-        <h2 class="roboto-mono">Время вылета: {{flight.departure_time}}</h2>
-        <h2 class="roboto-mono">Время прилета: {{flight.arrival_time}}</h2>
-        <h2 class="roboto-mono">Цена билета: {{flight.price}}</h2>
-        <h2 class="roboto-mono">Количество пересадок: {{flight.transfers}}</h2>
-        <form method="post">
+        <div class="airline-name-container">
+            <img src="{{flight.airline.logo.url}}" width="50px" height="50px" class="airline-logo">
+            <h2 class="airline_name">{{flight.airline}}</h2>
+        </div>
+        <div class="main_card_container">
+            <h2 class="origin_text">{{flight.departure_time|time:"H:i"}} {{flight.origin}}</h2>
+            <h2 class="origin_to_destination_text">&darr;</h2>
+            <h2 class="destination_text">{{flight.arrival_time|time:"H:i"}} {{flight.destination}}</h2>
+            <h2>{{flight.transfers}}</h2>
+            <h2>{{flight.price}}</h2>
+            <button class="roboto-mono btn">Купить</button>
+        </div>
+    </div>
+
+    <div class="buy_flight_form_container">
+            <form method="post">
             {% csrf_token %}
             {% comment %} {{ form.as_p }} {% endcomment %}
             {% for field in form %}
