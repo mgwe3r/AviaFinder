@@ -27,11 +27,14 @@
         <div class="airline-name-container">
             <img src="{{flight.airline.logo.url}}" width="50px" height="50px" class="airline-logo">
             <h2 class="airline_name">{{flight.airline}}</h2>
+            <h5 class="flight_time">{{flight.flight_time}} в полете</h5>
         </div>
         <div class="main_card_container">
             <h2 class="origin_text">{{flight.departure_time|time:"H:i"}} {{flight.origin}}</h2>
+            <h2>{{flight.departure_time|date:"d M"}}</h2>
             <h2 class="origin_to_destination_text">&darr;</h2>
             <h2 class="destination_text">{{flight.arrival_time|time:"H:i"}} {{flight.destination}}</h2>
+            <h2>{{flight.arrival_time|date:"d M"}}</h2>
             <h2>{{flight.transfers}}</h2>
             <h2>{{flight.price}}</h2>
             <button class="roboto-mono btn">Купить</button>
