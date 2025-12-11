@@ -25,13 +25,23 @@ input{
 }
 
 .card_container{
-    height: 240px;
-    width: 450px;
+    height: 280px;
+    width: 400px;
     padding: 20px 20px;
     margin: 10px auto;
     border: 1px solid white;
     border-radius: 12px;
     background-color: white;
+}
+
+.airport_origin_info{
+    margin: 0 65px;
+    position: absolute;
+}
+
+.airport_destination_info{
+    margin: 0 65px;
+    position: absolute;
 }
 
 .airline-logo{
@@ -44,6 +54,10 @@ input{
 
 .flight_time{
     margin: 0px 0px;
+    color: grey;
+}
+
+.city_code{
     color: grey;
 }
 

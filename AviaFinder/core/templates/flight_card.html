@@ -30,13 +30,25 @@
             <h5 class="flight_time">{{flight.flight_time}} в полете</h5>
         </div>
         <div class="main_card_container">
-            <h2 class="origin_text">{{flight.departure_time|time:"H:i"}} {{flight.origin}}</h2>
-            <h2>{{flight.departure_time|date:"d M"}}</h2>
+            <div class="airport_origin_info">
+                <h2 class="origin_text">{{flight.origin.name}}</h2>
+                <h5 class="origin_city_code city_code">{{flight.origin.airport}}, {{flight.origin.code}}</h5>
+            </div>
+            <div class="origin_time_info">
+                <h2>{{flight.departure_time|time:"H:i"}}</h2>
+                <h2>{{flight.departure_time|date:"d M"}}</h2>
+            </div>
             <h2 class="origin_to_destination_text">&darr;</h2>
-            <h2 class="destination_text">{{flight.arrival_time|time:"H:i"}} {{flight.destination}}</h2>
-            <h2>{{flight.arrival_time|date:"d M"}}</h2>
+            <div class="airport_destination_info">
+                <h2 class="destination_text">{{flight.destination.name}}</h2>
+                <h5 class="destination_city_code city_code">{{flight.destination.airport}}, {{flight.destination.code}}</h5>
+            </div>
+            <div class="destination_time_info">
+                <h2>{{flight.arrival_time|time:"H:i"}}</h2>
+                <h2>{{flight.arrival_time|date:"d M"}}</h2>
+            </div>
             <h2>{{flight.transfers}}</h2>
-            <h2>{{flight.price}}</h2>
+            <h2>{{flight.price}} руб.</h2>
             <button class="roboto-mono btn">Купить</button>
         </div>
     </div>
