@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+
+.menu_main_container{
+    height: 130px;
+    width: 190px;
+    margin: 0 100px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: -2px 0px 30px -2px rgba(34, 60, 80, 0.2);
+}
+
+.main_container{
+    background-color: white;
+    height: 350px;
+    width: 600px;
+    margin: 0 30vh;
+    border-radius: 8px;
+    box-shadow: -2px 0px 30px -2px rgba(34, 60, 80, 0.2);
+}
+
+.my_flight_btn_container{
+    height: 50px;
+    width: 180px;
+    text-align: center;
+    margin-top: 10px;
+    position: absolute;
+    margin-left: 5px;
+    border-radius: 9px;
+    transition: 0.5s;
+    display: inline-flex;
+}
+
+.my_flight_btn_container:hover{
+    transition: 0.5s;
+    background-color: #e8eaeb;
+}
+
+.my_flight_image_background{
+    width: 30px;
+    height: 30px;
+    border-radius: 9px;
+    background-color: #e8eaeb;
+    margin: auto 10px;
+}
+
+.svg_my_flight_image{
+    margin-top: 2px;
+}
+
+.my_flight_btn{
+    text-decoration: none;
+    color: black;
+    font-size: 15px;
+    margin: auto 0;
+    margin-left: 5px;
+}
+
+.settings_btn_container{
+    height: 50px;
+    width: 180px;
+    text-align: center;
+    margin-top: 70px;
+    position: absolute;
+    margin-left: 5px;
+    border-radius: 9px;
+    transition: 0.5s;
+    display: inline-flex;
+}
+
+a{
+    text-decoration: none;
+}
+
+.settings_btn_container:hover{
+    transition: 0.5s;
+    background-color: #e8eaeb;
+}
+
+.settings_image_background{
+    width: 30px;
+    height: 30px;
+    border-radius: 9px;
+    background-color: #e8eaeb;
+    margin: auto 10px;
+}
+
+.svg_settings_image{
+    margin-top: 2px;
+}
+
+.settings_btn{
+    text-decoration: none;
+    color: black;
+    font-size: 15px;
+    margin: auto 0;
+    margin-left: 50px;
+}
+
+.user_not_or_login_text{
+    margin: 0 40px;
+}
+
+.roboto-mono{
+  font-family: "Roboto Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}

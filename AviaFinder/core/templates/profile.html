@@ -1,15 +1,40 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static "css/profile_style.css" %}">
     <title>Профиль | АвиаФайндер</title>
 </head>
 <body>
-    {% if user.is_authenticated %}
-        <h1>Привет, {{user.username}}</h1>
-    {% else %}
-        <h1>Вы не вошли в аккаунт</h1>
-    {% endif %}
+    <!-- {% include "header.html" %} -->
+
+    <div class="menu_main_container">
+        <a href="#">
+        <div class="my_flight_btn_container">
+            <div class="my_flight_image_background">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="black" viewBox="0 0 24 24" aria-hidden="true" data-test-id="icon" style="display: inline-block;" class="svg_my_flight_image"><path d="M5.193 6h13.868l-.596-1.638a3 3 0 0 0-3.845-1.793z"></path><path fill-rule="evenodd" d="M5 8a3 3 0 0 0-3 3v6a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3v-1a2 2 0 1 1 0-4v-1a3 3 0 0 0-3-3zm4.207 8.707 4.5-4.5-1.414-1.414L8.5 14.586l-1.793-1.793-1.414 1.414 2.5 2.5z" clip-rule="evenodd"></path></svg>            </div>
+            <h2 class="my_flight_btn roboto-mono">Мои билеты</h2>
+        </div>
+        </a>
+        <a href="#">
+        <div class="settings_btn_container">
+            <div class="settings_image_background">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="black" viewBox="0 0 24 24" aria-hidden="true" data-test-id="icon" style="display: inline-block;" class="svg_settings_image"><path fill-rule="evenodd" d="M14.002 3.223a9 9 0 0 0-4.003 0A3 3 0 0 1 5.402 5.88a9 9 0 0 0-2.004 3.466 3 3 0 0 1 0 5.31 9 9 0 0 0 2.004 3.466A3 3 0 0 1 10 20.777a9 9 0 0 0 4.003 0A3 3 0 0 1 18.6 18.12a9 9 0 0 0 2.003-3.466 3 3 0 0 1 0-5.31A9 9 0 0 0 18.6 5.879a3 3 0 0 1-4.597-2.656M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6" clip-rule="evenodd"></path></svg>
+            </div>
+            <h2 class="settings_btn roboto-mono">Настройки</h2>
+        </a>
+    </div>
+
+    <div class="main_container">
+        <div class="user_not_or_login_text">
+            {% if user.is_authenticated %}
+            <h1 class="roboto-mono">Привет, {{user.username}}</h1>
+            {% else %}
+            <h1 class="roboto-mono">Вы не вошли в аккаунт</h1>
+            {% endif %}
+        </div>
+    </div>
 </body>
 </html>
